@@ -10,11 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace HoraDaHora.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MainPage : ContentPage
+	public partial class CadastroPage : ContentPage
 	{
-		public MainPage ()
+		public CadastroPage ()
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void Cadastrar(object sender, EventArgs e)
+        {
+            // TODO - cadastrar na api
+        }
+    }
 }

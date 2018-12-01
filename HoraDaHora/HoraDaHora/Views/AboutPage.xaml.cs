@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,6 +16,11 @@ namespace HoraDaHora.Views
         private void Login()
         {
 
+        }
+
+        private void AbrirRepo(object sender, EventArgs e)
+        {
+           Device.OpenUri(new Uri("https://github.com/HoraDaHora"));
         }
     }
 }
