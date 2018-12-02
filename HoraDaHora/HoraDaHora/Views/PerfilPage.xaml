@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout Orientation="Horizontal">
             <Image Source="http://www.sertaozinho.pb.gov.br/wp-content/uploads/2018/10/man-user.png" WidthRequest="75" HeightRequest="25" />
-            <Label Text="Jorge"/>
+            <Label x:Name="infos" Text="Jorge"/>
 
         </StackLayout>
     </ContentPage.Content>

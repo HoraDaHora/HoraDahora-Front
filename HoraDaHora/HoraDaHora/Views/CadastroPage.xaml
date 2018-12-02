@@ -29,7 +29,7 @@
                 <ScrollView Grid.Row="1">
                     <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
                         <Entry x:Name="login" Placeholder="login" />
-                        <Entry x:Name="senha" Placeholder="senha" />
+                        <Entry x:Name="senha" Placeholder="senha" IsPassword="True" />
                         <Button Margin="0,10,0,0" Text="cadastrar"
                         Clicked="Cadastrar"
                         BackgroundColor="{StaticResource Primary}"

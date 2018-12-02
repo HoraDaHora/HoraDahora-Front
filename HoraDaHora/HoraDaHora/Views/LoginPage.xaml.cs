@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -23,21 +24,28 @@ namespace HoraDaHora.Views
             string content = "{\"email\": \"\",\"username\": \"" + login.Text + "\",\"password\": \"" + senha.Text + "\"}";
             WebClient wc = new WebClient();
             wc.Headers.Add("Content-Type", "application/json");
+            string resp = "";
 
             try
             {
-                string resp = wc.UploadString("http://localhost:8000/rest-auth/login/", content);
-                
+                resp = wc.UploadString("http://localhost:8000/rest-auth/login/", content);
+                dynamic objeto = JsonConvert.DeserializeObject(resp);
                 App.Current.Properties.Clear();
-                App.Current.Properties.Add("user", content);
-                App.Current.Properties.Add("key", resp);
+                App.Current.Properties.Add("user", objeto.user);
+                App.Current.Properties.Add("key", objeto.key);
 
                 System.Diagnostics.Debug.WriteLine(resp.ToString());
-                App.Current.MainPage = new Views.MainPage();
             }
             catch
             {
                 System.Diagnostics.Debug.WriteLine("Invalid password");
+            }
+
+            if(resp != "")
+            {
+                System.Diagnostics.Debug.WriteLine("resposta: " + resp.ToString());
+
+                App.Current.MainPage = new NavigationPage(new Views.MainPage());
             }
         }
 

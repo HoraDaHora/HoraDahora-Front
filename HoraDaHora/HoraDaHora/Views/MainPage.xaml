@@ -1,12 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:master="clr-namespace:HoraDaHora.Views"
              x:Class="HoraDaHora.Views.MainPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+    <MasterDetailPage.Master>
+        <!-- Menu -->
+        <ContentPage Title="Menu">
+            <StackLayout>
+                <Button Text="😃 Perfil" BackgroundColor="Transparent" Clicked="Perfil" />
+                <Button Text="🎲 Sobre" BackgroundColor="Transparent" Clicked="About" />
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <!-- Conteudo -->
+        <master:PerfilPage />
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

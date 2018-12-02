@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,19 @@ namespace HoraDaHora.Views
         private void Cadastrar(object sender, EventArgs e)
         {
             // TODO - cadastrar na api
+            string content = "{\"username\": \"" + login.Text + "\",\"email\": \"\",\"password\": \"" + senha.Text + "\"}";
+            WebClient wc = new WebClient();
+            wc.Headers.Add("Content-Type", "application/json");
+
+            try
+            {
+                string resp = wc.UploadString("http://localhost:8000/users/", content);
+                System.Diagnostics.Debug.WriteLine(resp.ToString());
+            }
+            catch
+            {
+
+            }
         }
     }
 }
