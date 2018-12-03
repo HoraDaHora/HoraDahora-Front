@@ -1,12 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HoraDaHora.Views.PerfilPage">
+             x:Class="HoraDaHora.Views.PerfilPage"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="⎗" Clicked="LogOut">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="cancel.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
-        <StackLayout Orientation="Horizontal">
-            <Image Source="http://www.sertaozinho.pb.gov.br/wp-content/uploads/2018/10/man-user.png" WidthRequest="75" HeightRequest="25" />
-            <Label x:Name="infos" Text="Jorge"/>
-
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Margin="10">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Start" Margin="20">
+                    <Image Source="http://www.sertaozinho.pb.gov.br/wp-content/uploads/2018/10/man-user.png" WidthRequest="75" HeightRequest="25" HorizontalOptions="Start" />
+                    <StackLayout>
+                        <Label x:Name="username" Text="" HorizontalOptions="End" FontSize="Large"/>
+                        <Label x:Name="phone" Text="" HorizontalOptions="End" FontSize="Large"/>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                            <Image Source="coin.png"/>
+                            <Label x:Name="coins" Text="" HorizontalOptions="End" FontSize="Large"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Habilidades.png"/>
+                        <Button HorizontalOptions="End" Text="+" WidthRequest="40" HeightRequest="40" BorderRadius="20"/>
+                    </StackLayout>
+                    <StackLayout x:Name="abilities" Orientation="Horizontal">
+                        <!--insert abilities here-->
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Horas.png"/>
+                        <Button HorizontalOptions="End" Text="+" WidthRequest="40" HeightRequest="40" BorderRadius="20"/>
+                    </StackLayout>
+                    <StackLayout x:Name="hour" Orientation="Horizontal">
+                        <!--insert hour here-->
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

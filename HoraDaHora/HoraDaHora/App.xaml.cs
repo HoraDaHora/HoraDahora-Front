@@ -13,8 +13,14 @@ namespace HoraDaHora
         {
             InitializeComponent();
 
-
-            MainPage = new NavigationPage(new LoginPage());
+            if (App.Current.Properties.ContainsKey("user"))
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new LoginPage());
+            }
         }
 
         protected override void OnStart()

@@ -104,6 +104,10 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="coin.png" />
+    <Content Include="Habilidades.png" />
+    <Content Include="Horas.png" />
+    <Content Include="logo.gif" />
     <Content Include="Piskel.gif" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />

@@ -8,6 +8,7 @@
         <ContentPage Title="Menu">
             <StackLayout>
                 <Button Text="😃 Perfil" BackgroundColor="Transparent" Clicked="Perfil" />
+                <Button Text="🏅 Ranking" BackgroundColor="Transparent" Clicked="Ranking" />
                 <Button Text="🎲 Sobre" BackgroundColor="Transparent" Clicked="About" />
             </StackLayout>
         </ContentPage>
