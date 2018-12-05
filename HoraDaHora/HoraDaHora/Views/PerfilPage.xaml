@@ -12,6 +12,13 @@
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>
+        <ToolbarItem Text="✍" Clicked="Edit">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="save.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>

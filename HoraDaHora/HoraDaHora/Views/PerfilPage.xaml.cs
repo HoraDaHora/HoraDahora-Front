@@ -76,5 +76,10 @@ namespace HoraDaHora.Views
             int b = rand.Next(max);
             return Color.FromRgb(r, g, b);
         }
+
+        private void Edit(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new EditPage());
+        }
     }
 }

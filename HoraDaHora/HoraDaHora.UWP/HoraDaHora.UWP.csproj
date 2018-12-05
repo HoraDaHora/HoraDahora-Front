@@ -105,10 +105,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="coin.png" />
+    <Content Include="contato.png" />
+    <Content Include="Dragon.png" />
+    <Content Include="Editar-Perfil.png" />
     <Content Include="Habilidades.png" />
     <Content Include="Horas.png" />
     <Content Include="logo.gif" />
     <Content Include="Piskel.gif" />
+    <Content Include="pronto.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
@@ -137,6 +141,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="username.png" />
     <Content Include="xamarin_logo.png" />
     <Content Include="add.png" />
     <Content Include="save.png" />
