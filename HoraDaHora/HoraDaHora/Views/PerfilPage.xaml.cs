@@ -38,16 +38,35 @@ namespace HoraDaHora.Views
             phone.Text = (string)objeto.profile.phone;
             coins.Text = (string)objeto.profile.coins;
 
+            string aux;
+            dynamic auxObj;
+
             try
             {
                 foreach(var i in objeto.profile.abilities)
                 {
-                    InsertAbilitie(i.name);
+                    aux = wc.DownloadString("http://localhost:8000/users/abilities/" + i);
+                    auxObj = JsonConvert.DeserializeObject(aux);
+                    InsertAbilitie(auxObj.name);
                 }
             }
             catch (Exception)
             {
                 System.Diagnostics.Debug.WriteLine("Abilities exception");
+            }
+
+            try
+            {
+                foreach (var i in objeto.availability)
+                {
+                    aux = wc.DownloadString("http://localhost:8000/users/availability/" + i);
+                    auxObj = JsonConvert.DeserializeObject(aux);
+                    InsertHour((string)auxObj.date + " : " + auxObj.inicial + " - " + auxObj.final);
+                }
+            }
+            catch (Exception)
+            {
+                System.Diagnostics.Debug.WriteLine("Hours exception");
             }
         }
 
@@ -80,6 +99,11 @@ namespace HoraDaHora.Views
         private void Edit(object sender, EventArgs e)
         {
             Navigation.PushAsync(new EditPage());
+        }
+
+        private void AddHour(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddHourPage());
         }
     }
 }

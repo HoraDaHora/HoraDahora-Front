@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HoraDaHora.Views.AddHourPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="10" Margin="10">
+            <Image Source="data.png"/>
+            <StackLayout Orientation="Horizontal">
+                <DatePicker x:Name="date"/>
+            </StackLayout>
+            <Image Source="hora_inicial.png"/>
+            <StackLayout Orientation="Horizontal">
+                <TimePicker x:Name="inicial"/>
+            </StackLayout>
+            <Image Source="hora_final.png"/>
+            <StackLayout Orientation="Horizontal">
+                <TimePicker x:Name="final"/>
+            </StackLayout>
+            <Button Image="inserir.png" BackgroundColor="CornflowerBlue" Clicked="Insert" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

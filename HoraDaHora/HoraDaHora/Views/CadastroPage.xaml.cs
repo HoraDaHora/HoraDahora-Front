@@ -34,6 +34,7 @@ namespace HoraDaHora.Views
             {
 
             }
+            Navigation.PopAsync();
         }
     }
 }

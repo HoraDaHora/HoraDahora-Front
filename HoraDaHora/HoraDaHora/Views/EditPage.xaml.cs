@@ -57,6 +57,7 @@ namespace HoraDaHora.Views
             {
                 System.Diagnostics.Debug.WriteLine("Update perfil error");
             }
+            Navigation.PushAsync(new MainPage());
         }
     }
 }

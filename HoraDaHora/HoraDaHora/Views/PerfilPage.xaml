@@ -24,11 +24,14 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="10">
-                <StackLayout Orientation="Horizontal" VerticalOptions="Start" Margin="20">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Start" Margin="20" HorizontalOptions="FillAndExpand">
                     <Image Source="http://www.sertaozinho.pb.gov.br/wp-content/uploads/2018/10/man-user.png" WidthRequest="75" HeightRequest="25" HorizontalOptions="Start" />
-                    <StackLayout>
+                    <StackLayout HorizontalOptions="Center">
                         <Label x:Name="username" Text="" HorizontalOptions="End" FontSize="Large"/>
-                        <Label x:Name="phone" Text="" HorizontalOptions="End" FontSize="Large"/>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                            <Image Source="telegram_icon.png"/>
+                            <Label x:Name="phone" Text="" HorizontalOptions="End" FontSize="Large"/>
+                        </StackLayout>
                         <StackLayout Orientation="Horizontal" VerticalOptions="End">
                             <Image Source="coin.png"/>
                             <Label x:Name="coins" Text="" HorizontalOptions="End" FontSize="Large"/>
@@ -40,16 +43,16 @@
                         <Image Source="Habilidades.png"/>
                         <Button HorizontalOptions="End" Text="+" WidthRequest="40" HeightRequest="40" BorderRadius="20"/>
                     </StackLayout>
-                    <StackLayout x:Name="abilities" Orientation="Horizontal">
+                    <StackLayout x:Name="abilities" Margin="20">
                         <!--insert abilities here-->
                     </StackLayout>
                 </StackLayout>
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Image Source="Horas.png"/>
-                        <Button HorizontalOptions="End" Text="+" WidthRequest="40" HeightRequest="40" BorderRadius="20"/>
+                        <Button HorizontalOptions="End" Text="+" WidthRequest="40" HeightRequest="40" BorderRadius="20" Clicked="AddHour"/>
                     </StackLayout>
-                    <StackLayout x:Name="hour" Orientation="Horizontal">
+                    <StackLayout x:Name="hour" Margin="20">
                         <!--insert hour here-->
                     </StackLayout>
                 </StackLayout>

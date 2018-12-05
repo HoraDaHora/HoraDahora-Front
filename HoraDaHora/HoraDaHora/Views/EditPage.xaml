@@ -5,10 +5,10 @@
     <ContentPage.Content>
         <StackLayout Margin="15">
             <Image Source="Editar-Perfil.png"/>
-            <<!--StackLayout Orientation="Horizontal" Padding="15">
+            <!--<StackLayout Orientation="Horizontal" Padding="15">
                 <Image Source="username.png"/>
                 <Entry x:Name="username" HorizontalOptions="FillAndExpand"/>
-            </StackLayout-->>
+            </StackLayout>-->
             <StackLayout Orientation="Horizontal" Padding="15">
                 <Image Source="contato.png"/>
                 <Entry x:Name="phone" HorizontalOptions="FillAndExpand"/>
