@@ -113,7 +113,7 @@
     <AndroidResource Include="Resources\drawable\Horas.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Editar-Perfil.png" />
+    <AndroidResource Include="Resources\drawable\Editar_Perfil.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\username.png" />
@@ -128,10 +128,10 @@
     <AndroidResource Include="Resources\drawable\pronto.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\data-inicial.png" />
+    <AndroidResource Include="Resources\drawable\data_inicial.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\data-final.png" />
+    <AndroidResource Include="Resources\drawable\data_final.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\telegram_icon.png" />

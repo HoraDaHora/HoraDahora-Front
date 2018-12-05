@@ -79,6 +79,23 @@ namespace HoraDaHora.Views
             {
                 System.Diagnostics.Debug.WriteLine(i.Coins);
                 i.Username = aux.ToString() + " - " + i.Username;
+                if (aux == 1)
+                {
+                    i.Username = i.Username + "    🏅";
+                }
+                else if (aux > 1 && aux < 11)
+                {
+                    i.Username = i.Username + "    🥇";
+                }
+                else if (aux >= 11 && aux < 31)
+                {
+                    i.Username = i.Username + "    🥈";
+                }
+                else
+                {
+                    i.Username = i.Username + "    🥉";
+                }
+
                 aux++;
             }
             return a;

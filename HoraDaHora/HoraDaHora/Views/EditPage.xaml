@@ -4,7 +4,7 @@
              x:Class="HoraDaHora.Views.EditPage">
     <ContentPage.Content>
         <StackLayout Margin="15">
-            <Image Source="Editar-Perfil.png"/>
+            <Image Source="Editar_Perfil.png"/>
             <!--<StackLayout Orientation="Horizontal" Padding="15">
                 <Image Source="username.png"/>
                 <Entry x:Name="username" HorizontalOptions="FillAndExpand"/>
