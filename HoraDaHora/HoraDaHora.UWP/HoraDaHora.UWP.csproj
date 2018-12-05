@@ -150,7 +150,10 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Ranking.png" />
     <Content Include="Selecione_uma_hora.png" />
+    <Content Include="Solicitacoes.png" />
+    <Content Include="Solicitar_hora.png" />
     <Content Include="telegram_icon.png" />
     <Content Include="username.png" />
     <Content Include="xamarin_logo.png" />

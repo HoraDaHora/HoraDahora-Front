@@ -16,11 +16,13 @@
     
     <ContentPage.Content>
         <StackLayout>
+            <Image Source="Ranking.png" HorizontalOptions="Center"/>
             <ListView x:Name="ItemsListView"
                 
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
                 IsPullToRefreshEnabled="true"
+                HorizontalOptions="Center"
                 CachingStrategy="RecycleElement"
                 ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>

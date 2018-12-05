@@ -23,8 +23,16 @@ namespace HoraDaHora.Views
             this.id = id;
             WebClient wc = new WebClient();
             wc.Headers.Add("Content-Type", "application/json");
+            string user = App.Current.Properties["user"].ToString();
+            dynamic objeto = JsonConvert.DeserializeObject(user);
 
-            string user = "";
+            if (id == (int)objeto.id)
+            {
+                BtnHour.IsEnabled = false;
+                BtnHour.IsVisible = false;
+            }
+
+            user = "";
             
             try
             {
@@ -35,7 +43,7 @@ namespace HoraDaHora.Views
                 System.Diagnostics.Debug.WriteLine("Connection error");
             }
 
-            dynamic objeto = JsonConvert.DeserializeObject(user);
+            objeto = JsonConvert.DeserializeObject(user);
 
             username.Text = (string)objeto.username;
             phone.Text = (string)objeto.profile.phone;
@@ -46,11 +54,9 @@ namespace HoraDaHora.Views
 
             try
             {
-                foreach (var i in objeto.profile.abilities)
+                foreach(var i in objeto.profile.abilities)
                 {
-                    aux = wc.DownloadString("http://localhost:8000/users/abilities/" + i);
-                    auxObj = JsonConvert.DeserializeObject(aux);
-                    InsertAbilitie(auxObj.name);
+                    InsertAbilitie((string)i.name);
                 }
             }
             catch (Exception)

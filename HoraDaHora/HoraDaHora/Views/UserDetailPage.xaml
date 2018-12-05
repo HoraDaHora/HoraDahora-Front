@@ -30,7 +30,7 @@
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Image Source="Horas.png"/>
-                        <Button HorizontalOptions="End" Text="🗹" WidthRequest="40" HeightRequest="40" BorderRadius="20" Clicked="GetHour"/>
+                        <Button x:Name="BtnHour" HorizontalOptions="End" Text="🗹" WidthRequest="40" HeightRequest="40" BorderRadius="20" Clicked="GetHour"/>
                     </StackLayout>
                     <StackLayout x:Name="hour" Margin="20">
                         <!--insert hour here-->

@@ -31,5 +31,10 @@ namespace HoraDaHora.Views
         {
             Detail = new NavigationPage(new Views.RankingPage());
         }
+
+        private void Notification(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new Views.NotificationPage());
+        }
     }
 }

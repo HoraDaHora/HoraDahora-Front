@@ -46,6 +46,7 @@ namespace HoraDaHora.Views
             if (ability.Text != "" && ability.Text != null)
             {
                 string content = "{\"name\":\"" + ability.Text + "\"}";
+                wc.Headers.Add("Content-Type", "application/json");
                 wc.UploadString("http://localhost:8000/users/abilities/", "Post", content);
             }
             else
@@ -60,7 +61,7 @@ namespace HoraDaHora.Views
             if(opcoes.SelectedIndex != -1)
             {
                 InsertAbility();
-                Navigation.PopAsync();
+                Navigation.PushAsync(new MainPage());
             }
             else
             {

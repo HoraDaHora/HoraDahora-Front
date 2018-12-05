@@ -6,6 +6,7 @@
         <StackLayout Margin="20" Padding="20" HorizontalOptions="Center" VerticalOptions="Center">
             <Image Source="Selecione_uma_hora.png"/>
             <Picker x:Name="opcoes"/>
+            <Button Image="Solicitar_hora.png" Clicked="GetHour"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
