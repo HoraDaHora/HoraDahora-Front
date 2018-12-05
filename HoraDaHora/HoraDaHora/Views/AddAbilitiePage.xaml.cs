@@ -27,7 +27,7 @@ namespace HoraDaHora.Views
             wc = new WebClient();
             wc.Headers.Add("Content-Type", "application/json");
 
-            string listOpcoes = wc.DownloadString("http://localhost:8000/users/abilities/");
+            string listOpcoes = wc.DownloadString(App.urlGlobal + "users/abilities/");
             dynamic objeto = JsonConvert.DeserializeObject(listOpcoes);
 
             List<string> lista = new List<string>();
@@ -47,7 +47,7 @@ namespace HoraDaHora.Views
             {
                 string content = "{\"name\":\"" + ability.Text + "\"}";
                 wc.Headers.Add("Content-Type", "application/json");
-                wc.UploadString("http://localhost:8000/users/abilities/", "Post", content);
+                wc.UploadString(App.urlGlobal + "users/abilities/", "Post", content);
             }
             else
             {
@@ -74,7 +74,7 @@ namespace HoraDaHora.Views
             wc.Headers.Add("Content-Type", "application/json");
             string user = App.Current.Properties["user"].ToString();
             dynamic objeto = JsonConvert.DeserializeObject(user);
-            string url = "http://localhost:8000/users/profile/" + objeto.profile.id + "/";
+            string url = App.urlGlobal + "users/profile/" + objeto.profile.id + "/";
 
             string content = "{\"abilities\":[";
             foreach (var i in objeto.profile.abilities)

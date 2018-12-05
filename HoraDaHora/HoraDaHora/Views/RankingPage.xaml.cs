@@ -25,7 +25,7 @@ namespace HoraDaHora.Views
             wc.Headers.Add("Content-Type", "application/json");
             try
             {
-                string resp = wc.DownloadString("http://localhost:8000/users/");
+                string resp = wc.DownloadString(App.urlGlobal + "users/");
                 dynamic objeto = JsonConvert.DeserializeObject(resp);
 
                 foreach(dynamic i in objeto)

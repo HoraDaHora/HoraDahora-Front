@@ -36,7 +36,7 @@ namespace HoraDaHora.Views
             try
             {
                 System.Diagnostics.Debug.WriteLine(content);
-                wc.UploadString("http://localhost:8000/users/availability/", "Post", content);
+                wc.UploadString(App.urlGlobal + "users/availability/", "Post", content);
             }
             catch (Exception)
             {

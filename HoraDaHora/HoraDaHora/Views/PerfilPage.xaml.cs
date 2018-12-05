@@ -25,7 +25,7 @@ namespace HoraDaHora.Views
 
             try
             {
-                user = wc.DownloadString("http://localhost:8000/users/" + objeto.id);
+                user = wc.DownloadString(App.urlGlobal + "users/" + objeto.id);
             }
             catch
             {
@@ -57,7 +57,7 @@ namespace HoraDaHora.Views
             {
                 foreach (var i in objeto.availability)
                 {
-                    aux = wc.DownloadString("http://localhost:8000/users/availability/" + i);
+                    aux = wc.DownloadString(App.urlGlobal + "users/availability/" + i);
                     auxObj = JsonConvert.DeserializeObject(aux);
                     InsertHour((string)auxObj.date + " : " + auxObj.inicial + " - " + auxObj.final);
                 }

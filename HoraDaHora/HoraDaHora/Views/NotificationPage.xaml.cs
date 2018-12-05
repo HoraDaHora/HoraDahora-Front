@@ -25,7 +25,7 @@ namespace HoraDaHora.Views
 
             try
             {
-                notification = wc.DownloadString("http://localhost:8000/users/notification/");
+                notification = wc.DownloadString(App.urlGlobal + "users/notification/");
             }
             catch
             {
@@ -39,20 +39,20 @@ namespace HoraDaHora.Views
 
             string date;
             string owner;
-            string interested;
+            // string interested;
             string status;
             dynamic auxObj;
             foreach (var i in objeto)
             {
                 if(i.interested == objetoUser.id)
                 {
-                    date = wc.DownloadString("http://localhost:8000/users/availability/" + i.date);
+                    date = wc.DownloadString(App.urlGlobal + "users/availability/" + i.date);
                     auxObj = JsonConvert.DeserializeObject(date);
                     date = (string)(auxObj.date + " : " + auxObj.inicial + " - " + auxObj.final);
-                    owner = wc.DownloadString("http://localhost:8000/users/" + i.owner);
+                    owner = wc.DownloadString(App.urlGlobal + "users/" + i.owner);
                     auxObj = JsonConvert.DeserializeObject(owner);
                     owner = (string)auxObj.username;
-                    //interested = wc.DownloadString("http://localhost:8000/users/" + i.interested);
+                    //interested = wc.DownloadString(App.urlGlobal + "users/" + i.interested);
                     //auxObj = JsonConvert.DeserializeObject(interested);
                     //interested = (string)auxObj.username;
                     status = (string)i.status;

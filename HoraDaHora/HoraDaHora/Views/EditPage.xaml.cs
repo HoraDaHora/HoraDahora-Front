@@ -27,7 +27,7 @@ namespace HoraDaHora.Views
 
             try
             {
-                user = wc.DownloadString("http://localhost:8000/users/" + objeto.id);
+                user = wc.DownloadString(App.urlGlobal + "users/" + objeto.id);
             }
             catch
             {
@@ -46,7 +46,7 @@ namespace HoraDaHora.Views
             wc.Headers.Add("Content-Type", "application/json");
             string userEdit = "{\"phone\":\"" + phone.Text + "\",\"abilities\":[]}";
             //string userEdit = "{\"id\":" + objeto.profile.id + ",\"abilities\":" + objeto.profile.abilities + ",\"user\":" + objeto.profile.user + ",\"phone\":" + objeto.profile.phone + ",\"photo\":" + objeto.profile.photo + ",\"coins\":" + objeto.profile.coins + ",\"points\":" + objeto.profile.points + "}";
-            string url = "http://localhost:8000/users/profile/" + objeto.profile.id + "/";
+            string url = App.urlGlobal + "users/profile/" + objeto.profile.id + "/";
             System.Diagnostics.Debug.WriteLine(url);
             System.Diagnostics.Debug.WriteLine(userEdit);
             try

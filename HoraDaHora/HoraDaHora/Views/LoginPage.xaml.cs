@@ -28,7 +28,7 @@ namespace HoraDaHora.Views
 
             try
             {
-                resp = wc.UploadString("http://localhost:8000/rest-auth/login/", content);
+                resp = wc.UploadString(App.urlGlobal + "rest-auth/login/", content);
                 dynamic objeto = JsonConvert.DeserializeObject(resp);
                 App.Current.Properties.Clear();
                 App.Current.Properties.Add("user", objeto.user);

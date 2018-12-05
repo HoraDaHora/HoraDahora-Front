@@ -27,7 +27,7 @@ namespace HoraDaHora.Views
 
             try
             {
-                string resp = wc.UploadString("http://localhost:8000/users/", content);
+                string resp = wc.UploadString(App.urlGlobal + "users/", content);
                 System.Diagnostics.Debug.WriteLine(resp.ToString());
             }
             catch

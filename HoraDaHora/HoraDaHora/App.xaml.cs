@@ -9,6 +9,9 @@ namespace HoraDaHora
     public partial class App : Application
     {
 
+        //public static string urlGlobal = "https://vast-scrubland-34922.herokuapp.com/";
+        public static string urlGlobal = "http://192.168.100.129:8000/";
+
         public App()
         {
             InitializeComponent();

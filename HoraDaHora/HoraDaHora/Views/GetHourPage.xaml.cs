@@ -30,7 +30,7 @@ namespace HoraDaHora.Views
 
             try
             {
-                user = wc.DownloadString("http://localhost:8000/users/" + id.ToString());
+                user = wc.DownloadString(App.urlGlobal + "users/" + id.ToString());
             }
             catch
             {
@@ -45,7 +45,7 @@ namespace HoraDaHora.Views
             foreach (var i in objeto.availability)
             {
                 wc.Headers.Add("Content-Type", "application/json");
-                aux = wc.DownloadString("http://localhost:8000/users/availability/" + (string)i);
+                aux = wc.DownloadString(App.urlGlobal + "users/availability/" + (string)i);
                 auxObj = JsonConvert.DeserializeObject(aux);
                 ids.Add((string)auxObj.id);
                 lista.Add((string)auxObj.date + " : " + auxObj.inicial + " - " + auxObj.final);
@@ -62,7 +62,7 @@ namespace HoraDaHora.Views
             dynamic objeto = JsonConvert.DeserializeObject(user);
 
             string content = "{\"owner\":"+ this.id + ",\"interested\":"+ objeto.id +",\"date\":\""+(string)ids[(int)opcoes.SelectedIndex]+"\"}";
-            string url = "http://localhost:8000/users/notification/";
+            string url = App.urlGlobal + "users/notification/";
             
 
             System.Diagnostics.Debug.WriteLine(content);
