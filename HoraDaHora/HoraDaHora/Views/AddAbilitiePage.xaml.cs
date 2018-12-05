@@ -70,18 +70,20 @@ namespace HoraDaHora.Views
 
         private void InsertAbility()
         {
+            wc.Headers.Add("Content-Type", "application/json");
             string user = App.Current.Properties["user"].ToString();
             dynamic objeto = JsonConvert.DeserializeObject(user);
-            string url = "http://localhost:8000/users/profile/" + objeto.profile.id;
+            string url = "http://localhost:8000/users/profile/" + objeto.profile.id + "/";
 
             string content = "{\"abilities\":[";
             foreach (var i in objeto.profile.abilities)
             {
-                content += i + ",";
+                content += "{\"id\":\"" + i.id + "\"},";
             }
-            content += ids[opcoes.SelectedIndex] + "]}";
+            content += "{\"id\":\"" + ids[opcoes.SelectedIndex] + "\"}" + "]}";
+            System.Diagnostics.Debug.WriteLine(url);
             System.Diagnostics.Debug.WriteLine(content);
-            wc.UploadString(url, "Put", content);
+            wc.UploadString(url, "Put", (string)content);
         }
     }
 }

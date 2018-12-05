@@ -45,9 +45,9 @@ namespace HoraDaHora.Views
             {
                 foreach(var i in objeto.profile.abilities)
                 {
-                    aux = wc.DownloadString("http://localhost:8000/users/abilities/" + i);
-                    auxObj = JsonConvert.DeserializeObject(aux);
-                    InsertAbilitie(auxObj.name);
+                    //aux = wc.DownloadString("http://localhost:8000/users/abilities/" + i);
+                    //auxObj = JsonConvert.DeserializeObject(aux);
+                    InsertAbilitie((string)i.name);
                 }
             }
             catch (Exception)
