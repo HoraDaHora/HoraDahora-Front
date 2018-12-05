@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HoraDaHora.Views.AddAbilitiePage">
+    <ContentPage.Content>
+        <StackLayout Margin="15" Padding="15" HorizontalOptions="Center" VerticalOptions="Center">
+            <Image Source="Escolha_uma_habilidade.png"/>
+            <Picker x:Name="opcoes"/>
+            <Button Clicked="Inserir" Image="Inserir.png" BackgroundColor="CornflowerBlue" HorizontalOptions="Center"/>
+            <Image Source="Crie_uma_nova.png"/>
+            <Entry x:Name="ability" Placeholder="habilidade"/>
+            <Button Clicked="InserirNova" BackgroundColor="CornflowerBlue" Image="Inserir_nova.png" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

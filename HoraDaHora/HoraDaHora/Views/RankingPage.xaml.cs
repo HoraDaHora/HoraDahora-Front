@@ -48,7 +48,7 @@ namespace HoraDaHora.Views
             if (item == null)
                 return;
 
-            await Navigation.PushAsync(new AboutPage());
+            await Navigation.PushAsync(new UserDetailPage(item.Id));
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;

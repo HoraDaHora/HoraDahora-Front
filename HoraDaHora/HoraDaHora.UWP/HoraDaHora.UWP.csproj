@@ -104,16 +104,21 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cadastrar.png" />
     <Content Include="coin.png" />
     <Content Include="contato.png" />
+    <Content Include="Crie_uma_nova.png" />
     <Content Include="data.png" />
     <Content Include="Dragon.png" />
     <Content Include="Editar-Perfil.png" />
+    <Content Include="entrar.png" />
+    <Content Include="Escolha_uma_habilidade.png" />
     <Content Include="Habilidades.png" />
     <Content Include="Horas.png" />
     <Content Include="hora_final.png" />
     <Content Include="hora_inicial.png" />
     <Content Include="inserir.png" />
+    <Content Include="Inserir_nova.png" />
     <Content Include="logo.gif" />
     <Content Include="Piskel.gif" />
     <Content Include="pronto.png" />
@@ -145,6 +150,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Selecione_uma_hora.png" />
     <Content Include="telegram_icon.png" />
     <Content Include="username.png" />
     <Content Include="xamarin_logo.png" />

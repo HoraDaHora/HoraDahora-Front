@@ -1,26 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HoraDaHora.Views.PerfilPage"
-             NavigationPage.HasNavigationBar="False">
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="⎗" Clicked="LogOut">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="cancel.png"/>
-                </OnPlatform>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-        <ToolbarItem Text="✍" Clicked="Edit">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="save.png"/>
-                </OnPlatform>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>
-    
+             x:Class="HoraDaHora.Views.UserDetailPage">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="10">
@@ -41,7 +22,6 @@
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Image Source="Habilidades.png"/>
-                        <Button HorizontalOptions="End" Text="+" WidthRequest="40" HeightRequest="40" BorderRadius="20" Clicked="AddAbilitie"/>
                     </StackLayout>
                     <StackLayout x:Name="abilities" Margin="20">
                         <!--insert abilities here-->
@@ -50,7 +30,7 @@
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Image Source="Horas.png"/>
-                        <Button HorizontalOptions="End" Text="+" WidthRequest="40" HeightRequest="40" BorderRadius="20" Clicked="AddHour"/>
+                        <Button HorizontalOptions="End" Text="🗹" WidthRequest="40" HeightRequest="40" BorderRadius="20" Clicked="GetHour"/>
                     </StackLayout>
                     <StackLayout x:Name="hour" Margin="20">
                         <!--insert hour here-->

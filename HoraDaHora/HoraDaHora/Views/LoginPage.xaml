@@ -28,11 +28,18 @@
                     <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10" Margin="20">
                         <Entry x:Name="login" Placeholder="login" />
                         <Entry x:Name="senha" Placeholder="senha" IsPassword="True"/>
-                        <Button Margin="0,10,0,0" Text="entrar"
-                        Clicked="Login"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
-                        <Button HorizontalOptions="End" Text="cadastrar" Clicked="Cadastro" />
+                        <Button Margin="0,10,0,0" 
+                                Image="entrar.png"
+                                HorizontalOptions="Center"
+                                BorderRadius="10"
+                                Clicked="Login"
+                                BackgroundColor="CornflowerBlue"
+                                TextColor="White" />
+                        <Button HorizontalOptions="End" 
+                                Image="cadastrar.png" 
+                                Clicked="Cadastro"
+                                BackgroundColor="CornflowerBlue"
+                                BorderRadius="10"/>
                     </StackLayout>
                 </ScrollView>
             </Grid>

@@ -11,28 +11,31 @@ using Xamarin.Forms.Xaml;
 
 namespace HoraDaHora.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PerfilPage : ContentPage
-    {
-        public PerfilPage()
-        {
-            InitializeComponent();
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class UserDetailPage : ContentPage
+	{
+        int id;
 
+		public UserDetailPage (int id)
+		{
+			InitializeComponent ();
+
+            this.id = id;
             WebClient wc = new WebClient();
             wc.Headers.Add("Content-Type", "application/json");
-            string user = App.Current.Properties["user"].ToString();
-            dynamic objeto = JsonConvert.DeserializeObject(user);
 
+            string user = "";
+            
             try
             {
-                user = wc.DownloadString("http://localhost:8000/users/" + objeto.id);
+                user = wc.DownloadString("http://localhost:8000/users/" + id);
             }
             catch
             {
                 System.Diagnostics.Debug.WriteLine("Connection error");
             }
 
-            objeto = JsonConvert.DeserializeObject(user);
+            dynamic objeto = JsonConvert.DeserializeObject(user);
 
             username.Text = (string)objeto.username;
             phone.Text = (string)objeto.profile.phone;
@@ -43,7 +46,7 @@ namespace HoraDaHora.Views
 
             try
             {
-                foreach(var i in objeto.profile.abilities)
+                foreach (var i in objeto.profile.abilities)
                 {
                     aux = wc.DownloadString("http://localhost:8000/users/abilities/" + i);
                     auxObj = JsonConvert.DeserializeObject(aux);
@@ -70,20 +73,16 @@ namespace HoraDaHora.Views
             }
         }
 
-        private void LogOut(object sender, EventArgs e)
-        {
-            App.Current.Properties.Clear();
-            App.Current.MainPage = new NavigationPage(new Views.LoginPage());
-        }
-
         private void InsertAbilitie(string name)
         {
-            abilities.Children.Add(new Button { Text = name, BackgroundColor = GetRandomColor() });
+            Button btn = new Button() { Text = name, BackgroundColor = GetRandomColor() };
+            abilities.Children.Add(btn);
         }
 
         private void InsertHour(string name)
         {
-            hour.Children.Add(new Button { Text = name, BackgroundColor = GetRandomColor() });
+            Button btn = new Button() { Text = name, BackgroundColor = GetRandomColor() };
+            hour.Children.Add(btn);
         }
 
         public Color GetRandomColor()
@@ -96,19 +95,9 @@ namespace HoraDaHora.Views
             return Color.FromRgb(r, g, b);
         }
 
-        private void Edit(object sender, EventArgs e)
+        private void GetHour(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new EditPage());
-        }
-
-        private void AddHour(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new AddHourPage());
-        }
-
-        private void AddAbilitie(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new AddAbilitiePage());
+            Navigation.PushAsync(new GetHourPage(id));
         }
     }
 }
